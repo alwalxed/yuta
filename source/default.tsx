@@ -50,12 +50,15 @@ function UsageBox() {
 }
 
 function DescriptionBox() {
-	const points = [
-'Discovers subdomains',
-		'Filters them',
-		'Runs DNS and HTTP probes',
-		'Outputs a clean file of working, non-duplicate entries',
-	];
+const points = [
+	'First, yuta finds subdomains with amass or subfinder',
+	'Next, it cleans and filters them',
+	'Then, runs DNS probes with dnsx to catch wildcards',
+	'Runs HTTP probes with httpx to catch 404s',
+	'Outputs a clean file',
+	'File is sorted by status code',
+	'Includes title, IP, domain, and status for each entry',
+];
 	return (
 		<Box
 			marginLeft={2}
@@ -63,27 +66,20 @@ function DescriptionBox() {
 			flexDirection="column"
 			alignItems="flex-start"
 		>
-			<Gradient colors={['#03001e', '#7303c0']}>Description:</Gradient>
-			<Box marginLeft={2}>
-				<Gradient colors={['#03001e', '#7303c0']}>
-					Yuta automates domain enumeration:
-				</Gradient>
-			</Box>
-			<Box marginLeft={4} display="flex" flexDirection="column">
+			<Gradient colors={['#03001e', '#7303c0']}>How Yuta Works:</Gradient>
+			<Box marginLeft={2} display="flex" flexDirection="column">
 				{points.map((text, index) => (
-					<PointsBox order={index + 1} text={text} />
+					<PointsBox key={index} text={text} />
 				))}
 			</Box>
 		</Box>
 	);
 }
 
-function PointsBox({order, text}: {order: number, text: string}) {
+function PointsBox({text}: {text: string}) {
 	return (
 		<Box>
-			<Text bold>
-				{order}){' '}
-			</Text>
+			<Text bold>{'• '}</Text>
 			<Text>{text}</Text>
 		</Box>
 	);
