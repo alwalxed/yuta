@@ -1,6 +1,6 @@
 {
 	"name": "@alwalxed/yuta",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Yuta simplifies domain enumeration by handling domain discovery, DNS probing, HTTP probing, and result filtering in one go.",
 	"keywords": [
 		"domain-enumeration",
