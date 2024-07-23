@@ -20,7 +20,7 @@ Yuta simplifies domain enumeration by streamlining the entire process into a sin
 To install Yuta, use npm:
 
 ```
-npm install -g yuta
+sudo npm install -g @alwalxed/yuta
 ```
 
 Then, set up the necessary tools with:

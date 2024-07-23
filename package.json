@@ -1,5 +1,6 @@
 {
 	"name": "@alwalxed/yuta",
+	"version": "1.0.1",
 	"description": "Yuta simplifies domain enumeration by handling domain discovery, DNS probing, HTTP probing, and result filtering in one go.",
 	"keywords": [
 		"domain-enumeration",
@@ -36,7 +37,6 @@
 	},
 	"homepage": "https://github.com/alwalxed/yuta#readme",
 	"private": false,
-	"version": "1.0.1",
 	"license": "MIT",
 	"bin": {
 		"yuta": "dist/cli.js"
