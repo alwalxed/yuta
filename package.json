@@ -10,21 +10,25 @@
 	"scripts": {
 		"build": "tsc",
 		"dev": "tsc --watch",
-		"test": "prettier --check . && xo && ava"
+		"test": "npx prettier -w . && prettier --check . && xo && ava"
 	},
 	"files": [
 		"dist"
 	],
 	"dependencies": {
+		"ansi-regex": "^6.0.1",
 		"dockerode": "^4.0.2",
 		"ink": "^4.1.0",
 		"ink-big-text": "^2.0.0",
 		"ink-gradient": "^3.0.0",
+		"ink-select-input": "^6.0.0",
 		"meow": "^11.0.0",
+		"nanoid": "^5.0.7",
 		"react": "^18.2.0"
 	},
 	"devDependencies": {
 		"@sindresorhus/tsconfig": "^3.0.1",
+		"@types/dockerode": "^3.3.30",
 		"@types/node": "^20.14.11",
 		"@types/react": "^18.0.32",
 		"@vdemedes/prettier-config": "^2.0.1",
@@ -33,6 +37,7 @@
 		"eslint-config-xo-react": "^0.27.0",
 		"eslint-plugin-react": "^7.32.2",
 		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-unicorn": "^54.0.0",
 		"ink-testing-library": "^3.0.0",
 		"prettier": "^2.8.7",
 		"ts-node": "^10.9.1",
@@ -52,7 +57,8 @@
 		"extends": "xo-react",
 		"prettier": true,
 		"rules": {
-			"react/prop-types": "off"
+			"react/prop-types": "off",
+			"unicorn/expiring-todo-comments": "off"
 		}
 	},
 	"prettier": "@vdemedes/prettier-config"

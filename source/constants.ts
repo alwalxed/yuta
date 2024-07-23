@@ -1,18 +1,39 @@
-export const dockerPullCommand =
-	'docker pull alwalxed/amass && docker pull alwalxed/dnsx && docker pull alwalxed/httpx && docker pull alwalxed/subfinder';
+import {platform as nodePlatform} from 'node:process';
+
+export const enumerationTools = [
+	{key: 'amass', label: 'amass', value: 'amass'},
+	{key: 'subfinder', label: 'subfinder', value: 'subfinder'},
+];
+
+export const dockerImages = [
+	'alwalxed/subfinder:latest',
+	'alwalxed/httpx:latest',
+	'alwalxed/dnsx:latest',
+	'alwalxed/amass:latest',
+];
 
 export const symbols = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
-export const colors = ['red', 'green', 'yellow', 'blue', 'cyan', 'magenta', 'white'];
+export const colors = [
+	'red',
+	'green',
+	'yellow',
+	'blue',
+	'cyan',
+	'magenta',
+	'white',
+];
 
-export const installedTool = [
-	'docker run alwalxed/amass amass -h',
-]
+export const installedTool = ['docker run alwalxed/amass amass -h'];
 
 export const platform =
-	process.platform === 'win32'
+	nodePlatform === 'win32'
 		? 'windows'
-		: process.platform === 'darwin'
+		: nodePlatform === 'darwin'
 		? 'macos'
-		: process.platform === 'linux'
+		: nodePlatform === 'linux'
 		? 'linux'
 		: 'linux';
+
+export const fullUrlRegex =
+	/^(https?:\/\/)?[a-zA-Z\d\-.]+\.[a-zA-Z]{2,}(\/\S*)?$/;
+export const domainRegex = /^[a-zA-Z\d\-.]+\.[a-zA-Z]{2,}$/;

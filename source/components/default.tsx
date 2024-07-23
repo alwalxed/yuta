@@ -1,7 +1,8 @@
 import React from 'react';
 import Gradient from 'ink-gradient';
 import BigText from 'ink-big-text';
-import { Box,Text } from 'ink';
+import {Box, Text} from 'ink';
+import {uuid} from '../utils/uuid.js';
 
 export function Default() {
 	return (
@@ -11,7 +12,7 @@ export function Default() {
 			<DescriptionBox />
 			<Gradient colors={['#03001e', '#7303c0']}>
 				For more information and updates, visit:
-				https://github.com/alwalxed/yuta {"\n"}
+				https://github.com/alwalxed/yuta {'\n'}
 			</Gradient>
 		</Box>
 	);
@@ -50,15 +51,15 @@ function UsageBox() {
 }
 
 function DescriptionBox() {
-const points = [
-	'First, yuta finds subdomains with amass or subfinder',
-	'Next, it cleans and filters them',
-	'Then, runs DNS probes with dnsx to catch wildcards',
-	'Runs HTTP probes with httpx to catch 404s',
-	'Outputs a clean file',
-	'File is sorted by status code',
-	'Includes title, IP, domain, and status for each entry',
-];
+	const points: readonly string[] = [
+		'Finds subdomains with Amass.',
+		'Cleans and filters results.',
+		'Runs DNS probes with DNSx.',
+		'Probes HTTP with HTTPx.',
+		'Outputs a clean file.',
+		'File is sorted by status code.',
+		'Includes title, domain, method, status, technology, and server.',
+	];
 	return (
 		<Box
 			marginLeft={2}
@@ -68,15 +69,15 @@ const points = [
 		>
 			<Gradient colors={['#03001e', '#7303c0']}>How Yuta Works:</Gradient>
 			<Box marginLeft={2} display="flex" flexDirection="column">
-				{points.map((text, index) => (
-					<PointsBox key={index} text={text} />
+				{points.map(text => (
+					<PointsBox key={uuid()} text={text} />
 				))}
 			</Box>
 		</Box>
 	);
 }
 
-function PointsBox({text}: {text: string}) {
+function PointsBox({text}: {readonly text: string}) {
 	return (
 		<Box>
 			<Text bold>{'• '}</Text>
