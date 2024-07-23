@@ -1,3 +1,4 @@
+import os from 'node:os';
 import React, {useEffect} from 'react';
 import {Box, Text} from 'ink';
 import type {ScanSteps} from '../../types.js';
@@ -14,7 +15,7 @@ export function AmassRun({
 	readonly url: string;
 	readonly uniqueIdentifier: string;
 }) {
-	const command = `docker run -v ~/.yuta:/root/.yuta alwalxed/amass amass enum -d ${url} -o /root/.yuta/amass/${baseName}-${uniqueIdentifier}-initial.txt`;
+	const command = `docker run -v ${os.homedir()}/.yuta:/root/.yuta alwalxed/amass amass enum -d ${url} -o /root/.yuta/amass/${baseName}-${uniqueIdentifier}-initial.txt`;
 	return <RunCommand command={command} setStep={setStep} />;
 }
 

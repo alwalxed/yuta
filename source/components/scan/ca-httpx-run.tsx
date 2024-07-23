@@ -1,3 +1,4 @@
+import os from 'node:os';
 import React, {useEffect} from 'react';
 import {Box, Text} from 'ink';
 import type {ScanSteps} from '../../types.js';
@@ -12,7 +13,7 @@ export function HttpxRun({
 	readonly setStep: React.Dispatch<React.SetStateAction<ScanSteps>>;
 	readonly uniqueIdentifier: string;
 }) {
-	const command = `docker run -v ~/.yuta:/root/.yuta alwalxed/httpx httpx -l /root/.yuta/dnsx/${baseName}-${uniqueIdentifier}.txt -nc -fhr -method -td -title -server -sc -o /root/.yuta/httpx/${baseName}-${uniqueIdentifier}-initial.txt`;
+	const command = `docker run -v ${os.homedir()}/.yuta:/root/.yuta alwalxed/httpx httpx -l /root/.yuta/dnsx/${baseName}-${uniqueIdentifier}.txt -nc -fhr -method -td -title -server -sc -o /root/.yuta/httpx/${baseName}-${uniqueIdentifier}-initial.txt`;
 	return <RunCommand command={command} setStep={setStep} />;
 }
 

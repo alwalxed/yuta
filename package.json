@@ -1,19 +1,60 @@
 {
-	"name": "yuta",
-	"version": "0.0.0",
+	"name": "@alwalxed/yuta",
+	"description": "Yuta simplifies domain enumeration by handling domain discovery, DNS probing, HTTP probing, and result filtering in one go.",
+	"keywords": [
+		"domain-enumeration",
+		"dns-probing",
+		"http-probing",
+		"amass",
+		"dnsx",
+		"httpx",
+		"docker",
+		"subdomain-discovery",
+		"web-security",
+		"command-line-tool",
+		"open-source",
+		"automated-probing",
+		"cli",
+		"cli-tool",
+		"hacking",
+		"security",
+		"subdomain-enumeration",
+		"pentesting",
+		"pentest",
+		"reconnaissance",
+		"recon",
+		"domain-discovery",
+		"domain-probing"
+	],
+	"author": "alwalxed",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/alwalxed/yuta"
+	},
+	"bugs": {
+		"url": "https://github.com/alwalxed/yuta/issues"
+	},
+	"homepage": "https://github.com/alwalxed/yuta#readme",
+	"private": false,
+	"version": "1.0.0",
 	"license": "MIT",
-	"bin": "dist/cli.js",
+	"bin": {
+		"yuta": "dist/cli.js"
+	},
 	"type": "module",
 	"engines": {
 		"node": ">=16"
 	},
 	"scripts": {
+		"start": "node dist/cli.js",
 		"build": "tsc",
 		"dev": "tsc --watch",
 		"test": "npx prettier -w . && prettier --check . && xo && ava"
 	},
 	"files": [
-		"dist"
+		"dist",
+		"README.md",
+		"LICENSE"
 	],
 	"dependencies": {
 		"ansi-regex": "^6.0.1",
@@ -21,7 +62,6 @@
 		"ink": "^4.1.0",
 		"ink-big-text": "^2.0.0",
 		"ink-gradient": "^3.0.0",
-		"ink-select-input": "^6.0.0",
 		"meow": "^11.0.0",
 		"nanoid": "^5.0.7",
 		"react": "^18.2.0"

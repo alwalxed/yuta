@@ -1,3 +1,4 @@
+import os from 'node:os';
 import React, {useEffect} from 'react';
 import {Box, Text} from 'ink';
 import type {ScanSteps} from '../../types.js';
@@ -12,7 +13,7 @@ export function DnsxRun({
 	readonly setStep: React.Dispatch<React.SetStateAction<ScanSteps>>;
 	readonly uniqueIdentifier: string;
 }) {
-	const command = `docker run -v ~/.yuta:/root/.yuta alwalxed/dnsx dnsx -l /root/.yuta/amass/${baseName}-${uniqueIdentifier}-unique.txt -o /root/.yuta/dnsx/${baseName}-${uniqueIdentifier}.txt`;
+	const command = `docker run -v ${os.homedir()}/.yuta:/root/.yuta alwalxed/dnsx dnsx -l /root/.yuta/amass/${baseName}-${uniqueIdentifier}-unique.txt -o /root/.yuta/dnsx/${baseName}-${uniqueIdentifier}.txt`;
 	return <RunCommand command={command} setStep={setStep} />;
 }
 

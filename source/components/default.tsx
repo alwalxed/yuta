@@ -4,13 +4,15 @@ import BigText from 'ink-big-text';
 import {Box, Text} from 'ink';
 import {uuid} from '../utils/uuid.js';
 
+const gradient = ['#7E4E60', '#B287A3'];
+
 export function Default() {
 	return (
 		<Box flexDirection="column" display="flex" alignItems="flex-start" gap={1}>
 			<TitleBox />
 			<UsageBox />
 			<DescriptionBox />
-			<Gradient colors={['#03001e', '#7303c0']}>
+			<Gradient colors={gradient}>
 				For more information and updates, visit:
 				https://github.com/alwalxed/yuta {'\n'}
 			</Gradient>
@@ -21,7 +23,7 @@ export function Default() {
 function TitleBox() {
 	return (
 		<Box display="flex" flexDirection="column" alignItems="flex-start">
-			<Gradient colors={['#03001e', '#7303c0']}>
+			<Gradient colors={gradient}>
 				<BigText text="yuta" align="left" font="simple" />
 				<Text>Automated Domain Enumeration Tool</Text>
 			</Gradient>
@@ -37,7 +39,7 @@ function UsageBox() {
 			flexDirection="column"
 			alignItems="flex-start"
 		>
-			<Gradient colors={['#03001e', '#7303c0']}>Usage:</Gradient>
+			<Gradient colors={gradient}>Usage:</Gradient>
 			<Box marginLeft={2}>
 				<Text>yuta install {'                   '} Install Yuta</Text>
 			</Box>
@@ -67,7 +69,7 @@ function DescriptionBox() {
 			flexDirection="column"
 			alignItems="flex-start"
 		>
-			<Gradient colors={['#03001e', '#7303c0']}>How Yuta Works:</Gradient>
+			<Gradient colors={gradient}>How Yuta Works:</Gradient>
 			<Box marginLeft={2} display="flex" flexDirection="column">
 				{points.map(text => (
 					<PointsBox key={uuid()} text={text} />

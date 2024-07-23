@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import {Box, Text} from 'ink';
 import type {ScanSteps} from '../../types.js';
+import {Loader} from '../loader.js';
 import {AmassRun} from './aa-amass-run.js';
 import {AmassClean} from './ab-amass-clean.js';
 import {DnsxRun} from './ba-dnsx-run.js';
 import {HttpxRun} from './ca-httpx-run.js';
 import {HttpxClean} from './cb-httpx-clean.js';
 import {FinalOutput} from './da-final-output.js';
-import { Loader } from '../loader.js';
 
 type Props = {readonly url: string; readonly uniqueIdentifier: string};
 
