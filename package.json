@@ -35,7 +35,6 @@
 	"bugs": {
 		"url": "https://github.com/alwalxed/yuta/issues"
 	},
-	"homepage": "https://github.com/alwalxed/yuta#readme",
 	"private": false,
 	"license": "MIT",
 	"bin": {
